@@ -63,7 +63,7 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		FurnaceRecipe cookedZombie = new FurnaceRecipe(cookedFlesh, Material.ROTTEN_FLESH, 0);
 		Bukkit.getServer().addRecipe(cookedZombie);
 		
-	    ItemStack applePie = new ItemStack(Material.PUMPKIN_PIE, 1, (short) 100); // Apple Pie
+		ItemStack applePie = new ItemStack(Material.PUMPKIN_PIE, 1, (short) 100); // Apple Pie
 		ItemMeta applePieMeta = applePie.getItemMeta();
 		applePieMeta.setDisplayName(ChatColor.WHITE + "Apple Pie");
 		List<String> applePieLore = new ArrayList<String>();
