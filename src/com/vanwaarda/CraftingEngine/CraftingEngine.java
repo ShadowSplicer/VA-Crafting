@@ -39,9 +39,9 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		blockChiseledStoneRecipe.setIngredient('s', Material.STEP, 5);
 		Bukkit.getServer().addRecipe(blockChiseledStoneRecipe);
 		
-		ItemStack dogFood = new ItemStack(Material.ROTTEN_FLESH, 1, (short) 100);
+		ItemStack dogFood = new ItemStack(Material.ROTTEN_FLESH, 1, (short) 100); // Dog Food
 		ItemMeta dogFoodMeta = dogFood.getItemMeta();
-		dogFoodMeta.setDisplayName("Dog Food");
+		dogFoodMeta.setDisplayName(ChatColor.WHITE + "Dog Food");
 		List<String> dogFoodLore = new ArrayList<String>();
 		dogFoodLore.add("Restores pets to full health.");
 		dogFoodLore.add("Restores 4 food, damages 4 health to players.");
@@ -52,9 +52,9 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		zombieDogFood.setIngredient('f', Material.ROTTEN_FLESH);
 		Bukkit.getServer().addRecipe(zombieDogFood);
 		
-		ItemStack cookedFlesh = new ItemStack(Material.ROTTEN_FLESH, 1, (short) 101);
+		ItemStack cookedFlesh = new ItemStack(Material.ROTTEN_FLESH, 1, (short) 101); // Zombie Jerky
 		ItemMeta CookedFleshMeta = cookedFlesh.getItemMeta();
-		CookedFleshMeta.setDisplayName("Zombie Jerky");
+		CookedFleshMeta.setDisplayName(ChatColor.WHITE + "Zombie Jerky");
 		List<String> cookedFleshLore = new ArrayList<String>();
 		cookedFleshLore.add("Restores 4 food, does no poison damage.");
 		CookedFleshMeta.setLore(cookedFleshLore);
@@ -63,47 +63,47 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		FurnaceRecipe cookedZombie = new FurnaceRecipe(cookedFlesh, Material.ROTTEN_FLESH, 0);
 		Bukkit.getServer().addRecipe(cookedZombie);
 		
-	    ItemStack applePie = new ItemStack(Material.PUMPKIN_PIE, 1, (short) 100);
+	    ItemStack applePie = new ItemStack(Material.PUMPKIN_PIE, 1, (short) 100); // Apple Pie
 		ItemMeta applePieMeta = applePie.getItemMeta();
-		applePieMeta.setDisplayName("Apple Pie");
+		applePieMeta.setDisplayName(ChatColor.WHITE + "Apple Pie");
 		List<String> applePieLore = new ArrayList<String>();
-		applePieLore.add("Restores 4 food, heals 3 health instantly");
+		applePieLore.add("Restores 4 food, heals 3 health instantly.");
 		applePieMeta.setLore(applePieLore);
 		applePie.setItemMeta(applePieMeta);
 		ShapedRecipe warmApplePie = new ShapedRecipe(applePie);
-		warmApplePie.shape("", "as", " e ");
+		warmApplePie.shape("as", " e");
 		warmApplePie.setIngredient('a', Material.APPLE);
 		warmApplePie.setIngredient('s', Material.SUGAR);
 		warmApplePie.setIngredient('e', Material.EGG);
 		Bukkit.getServer().addRecipe(warmApplePie);
 		
-		ItemStack meatStew = new ItemStack(Material.MUSHROOM_SOUP, 1, (short) 100);
+		// TODO: For some reason, this recipe isn't working. FIGURE IT OUT.
+		/*ItemStack meatStew = new ItemStack(Material.MUSHROOM_SOUP, 1, (short) 100); // Meat Stew
 		ItemMeta meatStewMeta = meatStew.getItemMeta();
-		meatStewMeta.setDisplayName("Meat Stew");
+		meatStewMeta.setDisplayName(ChatColor.WHITE + "Meat Stew");
 		List<String> meatStewLore = new ArrayList<String>();
-		meatStewLore.add("Restores 4 food, heals 2 health instantly");
+		meatStewLore.add("Restores 4 food, heals 2 health instantly.");
 		meatStewMeta.setLore(meatStewLore);
 		meatStew.setItemMeta(meatStewMeta);
 		ShapedRecipe tastyMeatStew = new ShapedRecipe(meatStew);
-		tastyMeatStew.shape("s", "cp", "b");
+		tastyMeatStew.shape("scp", " b ");
 		tastyMeatStew.setIngredient('s', Material.COOKED_BEEF);
 		tastyMeatStew.setIngredient('c', Material.CARROT);
 		tastyMeatStew.setIngredient('p', Material.BAKED_POTATO);
 		tastyMeatStew.setIngredient('b', Material.BOWL);
-		Bukkit.getServer().addRecipe(tastyMeatStew);
+		Bukkit.getServer().addRecipe(tastyMeatStew);*/
 		
-		ItemStack Fries = new ItemStack(Material.WHEAT, 3, (short) 100);
+		ItemStack Fries = new ItemStack(Material.BAKED_POTATO, 3, (short) 100); // Fries
 		ItemMeta FriesMeta = Fries.getItemMeta();
-		FriesMeta.setDisplayName("Fries");
+		FriesMeta.setDisplayName(ChatColor.WHITE + "Fries");
 		List<String> FriesLore = new ArrayList<String>();
-		FriesLore.add("Restores 2 food, heals 2 health instantly");
+		FriesLore.add("Restores 2 food, heals 2 health instantly.");
 		FriesMeta.setLore(FriesLore);
 		Fries.setItemMeta(FriesMeta);
 		ShapedRecipe frenchFries = new ShapedRecipe(Fries);
-		frenchFries.shape("", "p", "");
+		frenchFries.shape("p");
 		frenchFries.setIngredient('p', Material.BAKED_POTATO);
 		Bukkit.getServer().addRecipe(frenchFries);
-		//adding at least 12 more recipes here
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String[] args) {
