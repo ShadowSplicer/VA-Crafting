@@ -103,6 +103,7 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		frenchFries.shape("", "p", "");
 		frenchFries.setIngredient('p', Material.BAKED_POTATO);
 		Bukkit.getServer().addRecipe(frenchFries);
+		//adding at least 12 more recipes here
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String[] args) {
