@@ -86,7 +86,7 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		meatStewMeta.setLore(meatStewLore);
 		meatStew.setItemMeta(meatStewMeta);
 		ShapedRecipe tastyMeatStew = new ShapedRecipe(meatStew);
-		tastyMeatStew.shape("scp", " b ");
+		tastyMeatStew.shape("scp", " b");
 		tastyMeatStew.setIngredient('s', Material.COOKED_BEEF);
 		tastyMeatStew.setIngredient('c', Material.CARROT);
 		tastyMeatStew.setIngredient('p', Material.BAKED_POTATO);
@@ -104,6 +104,19 @@ public class CraftingEngine extends JavaPlugin implements Listener {
 		frenchFries.shape("p");
 		frenchFries.setIngredient('p', Material.BAKED_POTATO);
 		Bukkit.getServer().addRecipe(frenchFries);
+		
+		ItemStack Burger = new ItemStack(Material.BREAD, 1, (short) 100); // Hamburger
+		ItemMeta BurgerMeta = Burger.getItemMeta();
+		BurgerMeta.setDisplayName(ChatColor.WHITE + "Hamburger");
+		List<String> BurgerLore = new ArrayList<String>();
+		BurgerLore.add("Restores 4 food, heals 3 health instantly.");
+		BurgerMeta.setLore(BurgerLore);
+		Burger.setItemMeta(BurgerMeta);
+		ShapedRecipe hamburger = new ShapedRecipe(Burger);
+		hamburger.shape("b", "m", "b");
+		hamburger.setIngredient('b', Material.BREAD);
+		hamburger.setIngredient('m', Material.COOKED_BEEF);
+		Bukkit.getServer().addRecipe(hamburger);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String[] args) {
